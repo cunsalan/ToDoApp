@@ -13,7 +13,7 @@ app.use(express.static('./public'));
 
 todoController(app);
 
-//listen to port
+//listen to portt
 app.listen('3000');
 
 console.log('You are listening to port 3000');
