@@ -10,6 +10,7 @@ $(document).ready(function(){
           url: '/todo',
           data: todo,
           success: function(data){
+            console.log('Ajax Post ');
             //do something with the data via front-end framework
             location.reload();
           }
@@ -25,6 +26,7 @@ $(document).ready(function(){
           type: 'DELETE',
           url: '/todo/' + item,
           success: function(data){
+            console.log('Ajax Delete ');
             //do something with the data via front-end framework
             location.reload();
           }
