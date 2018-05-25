@@ -44,7 +44,7 @@ module.exports = function(app){
         Todo.find({item:req.params.item.replace(/\-/g," ")}).remove(function(err,data){
             if(err) throw err;
             res.json(data);
-        });   
+        });
     });
 
     app.put('/todo',function(req,res){
