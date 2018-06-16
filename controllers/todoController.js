@@ -25,6 +25,7 @@ mongoose.connect('mongodb://sa:1234@ds235180.mlab.com:35180/todoapp');
 module.exports = function(app){
 
     app.get('/todo',function(req,res){
+        console.log('get method executed');
         Todo.find({},function(err,data){
             if(err) throw err;
             res.render('todo',{todos:data})
@@ -33,6 +34,7 @@ module.exports = function(app){
     });
 
     app.post('/todo',urlencodedParser,function(req,res){
+        console.log('post method executed');
         var newTodo = Todo(req.body).save(function(err,data){
             if(err) throw err;
             res.json(data);
@@ -40,6 +42,7 @@ module.exports = function(app){
     });
 
     app.delete('/todo/:item',function(req,res){
+        console.log('delete method executed');
         // delete the requested item form db
         Todo.find({item:req.params.item.replace(/\-/g," ")}).remove(function(err,data){
             if(err) throw err;
